@@ -1,0 +1,7 @@
+services:
+  generator:
+    container_name: cimnodes_generator
+    build: .
+    volumes:
+      - .:/work/cimnodes
+    command: /bin/bash -c "cd /work/cimgui/ && git pull && git submodule update --init --recursive && cd /work/cimnodes/generator && ./generator.sh"
