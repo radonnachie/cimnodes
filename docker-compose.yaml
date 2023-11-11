@@ -4,4 +4,4 @@ services:
     build: .
     volumes:
       - .:/work/cimnodes
-    command: /bin/bash -c "cd /work/cimgui/ && git pull && git submodule update --init --recursive && cd /work/cimnodes/generator && ./generator.sh"
+    command: /bin/bash -c "cd /work/cimgui/ && git pull && git submodule update --init --recursive ; cd /work/cimnodes/generator && ./generator.sh"

@@ -163,17 +163,17 @@ CIMGUI_API void imnodes_EndNodeTitleBar()
 {
     return imnodes::EndNodeTitleBar();
 }
-CIMGUI_API void imnodes_BeginInputAttribute(int id,ImNodesPinShape shape)
+CIMGUI_API void imnodes_BeginInputAttribute(int id,ImNodesPinShape shape,int category)
 {
-    return imnodes::BeginInputAttribute(id,shape);
+    return imnodes::BeginInputAttribute(id,shape,category);
 }
 CIMGUI_API void imnodes_EndInputAttribute()
 {
     return imnodes::EndInputAttribute();
 }
-CIMGUI_API void imnodes_BeginOutputAttribute(int id,ImNodesPinShape shape)
+CIMGUI_API void imnodes_BeginOutputAttribute(int id,ImNodesPinShape shape,int category)
 {
-    return imnodes::BeginOutputAttribute(id,shape);
+    return imnodes::BeginOutputAttribute(id,shape,category);
 }
 CIMGUI_API void imnodes_EndOutputAttribute()
 {

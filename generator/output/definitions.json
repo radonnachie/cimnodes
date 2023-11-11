@@ -176,7 +176,7 @@
   ],
   "imnodes_BeginInputAttribute": [
     {
-      "args": "(int id,ImNodesPinShape shape)",
+      "args": "(int id,ImNodesPinShape shape,int category)",
       "argsT": [
         {
           "name": "id",
@@ -185,12 +185,17 @@
         {
           "name": "shape",
           "type": "ImNodesPinShape"
+        },
+        {
+          "name": "category",
+          "type": "int"
         }
       ],
-      "argsoriginal": "(int id,ImNodesPinShape shape=ImNodesPinShape_CircleFilled)",
-      "call_args": "(id,shape)",
+      "argsoriginal": "(int id,ImNodesPinShape shape=ImNodesPinShape_CircleFilled,int category=0)",
+      "call_args": "(id,shape,category)",
       "cimguiname": "imnodes_BeginInputAttribute",
       "defaults": {
+        "category": "0",
         "shape": "ImNodesPinShape_CircleFilled"
       },
       "funcname": "BeginInputAttribute",
@@ -198,7 +203,7 @@
       "namespace": "imnodes",
       "ov_cimguiname": "imnodes_BeginInputAttribute",
       "ret": "void",
-      "signature": "(int,ImNodesPinShape)",
+      "signature": "(int,ImNodesPinShape,int)",
       "stname": ""
     }
   ],
@@ -260,7 +265,7 @@
   ],
   "imnodes_BeginOutputAttribute": [
     {
-      "args": "(int id,ImNodesPinShape shape)",
+      "args": "(int id,ImNodesPinShape shape,int category)",
       "argsT": [
         {
           "name": "id",
@@ -269,12 +274,17 @@
         {
           "name": "shape",
           "type": "ImNodesPinShape"
+        },
+        {
+          "name": "category",
+          "type": "int"
         }
       ],
-      "argsoriginal": "(int id,ImNodesPinShape shape=ImNodesPinShape_CircleFilled)",
-      "call_args": "(id,shape)",
+      "argsoriginal": "(int id,ImNodesPinShape shape=ImNodesPinShape_CircleFilled,int category=0)",
+      "call_args": "(id,shape,category)",
       "cimguiname": "imnodes_BeginOutputAttribute",
       "defaults": {
+        "category": "0",
         "shape": "ImNodesPinShape_CircleFilled"
       },
       "funcname": "BeginOutputAttribute",
@@ -282,7 +292,7 @@
       "namespace": "imnodes",
       "ov_cimguiname": "imnodes_BeginOutputAttribute",
       "ret": "void",
-      "signature": "(int,ImNodesPinShape)",
+      "signature": "(int,ImNodesPinShape,int)",
       "stname": ""
     }
   ],
