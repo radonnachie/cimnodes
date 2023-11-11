@@ -169,6 +169,18 @@
         "value": "29"
       }
     ],
+    "ImNodesLinkStyle_": [
+      {
+        "calc_value": 0,
+        "name": "ImNodesLinkStyle_Orthogonal",
+        "value": "0"
+      },
+      {
+        "calc_value": 1,
+        "name": "ImNodesLinkStyle_Beziers",
+        "value": "1"
+      }
+    ],
     "ImNodesMiniMapLocation_": [
       {
         "calc_value": 0,
@@ -189,6 +201,23 @@
         "calc_value": 3,
         "name": "ImNodesMiniMapLocation_TopRight",
         "value": "3"
+      }
+    ],
+    "ImNodesNodeSideShape_": [
+      {
+        "calc_value": 0,
+        "name": "ImNodesNodeSideShape_Straight",
+        "value": "0"
+      },
+      {
+        "calc_value": 1,
+        "name": "ImNodesNodeSideShape_Round",
+        "value": "1"
+      },
+      {
+        "calc_value": 2,
+        "name": "ImNodesNodeSideShape_Sharp",
+        "value": "2"
       }
     ],
     "ImNodesPinShape_": [
@@ -273,79 +302,86 @@
       },
       {
         "calc_value": 4,
-        "name": "ImNodesStyleVar_LinkThickness",
+        "name": "ImNodesStyleVar_LinkTerminationMargin",
         "value": "4"
       },
       {
         "calc_value": 5,
-        "name": "ImNodesStyleVar_LinkLineSegmentsPerLength",
+        "name": "ImNodesStyleVar_LinkThickness",
         "value": "5"
       },
       {
         "calc_value": 6,
-        "name": "ImNodesStyleVar_LinkHoverDistance",
+        "name": "ImNodesStyleVar_LinkLineSegmentsPerLength",
         "value": "6"
       },
       {
         "calc_value": 7,
-        "name": "ImNodesStyleVar_PinCircleRadius",
+        "name": "ImNodesStyleVar_LinkHoverDistance",
         "value": "7"
       },
       {
         "calc_value": 8,
-        "name": "ImNodesStyleVar_PinQuadSideLength",
+        "name": "ImNodesStyleVar_PinCircleRadius",
         "value": "8"
       },
       {
         "calc_value": 9,
-        "name": "ImNodesStyleVar_PinTriangleSideLength",
+        "name": "ImNodesStyleVar_PinQuadSideLength",
         "value": "9"
       },
       {
         "calc_value": 10,
-        "name": "ImNodesStyleVar_PinLineThickness",
+        "name": "ImNodesStyleVar_PinTriangleSideLength",
         "value": "10"
       },
       {
         "calc_value": 11,
-        "name": "ImNodesStyleVar_PinHoverRadius",
+        "name": "ImNodesStyleVar_PinLineThickness",
         "value": "11"
       },
       {
         "calc_value": 12,
-        "name": "ImNodesStyleVar_PinOffset",
+        "name": "ImNodesStyleVar_PinHoverRadius",
         "value": "12"
       },
       {
         "calc_value": 13,
-        "name": "ImNodesStyleVar_MiniMapPadding",
+        "name": "ImNodesStyleVar_PinOffset",
         "value": "13"
       },
       {
         "calc_value": 14,
-        "name": "ImNodesStyleVar_MiniMapOffset",
+        "name": "ImNodesStyleVar_MiniMapPadding",
         "value": "14"
       },
       {
         "calc_value": 15,
-        "name": "ImNodesStyleVar_COUNT",
+        "name": "ImNodesStyleVar_MiniMapOffset",
         "value": "15"
+      },
+      {
+        "calc_value": 16,
+        "name": "ImNodesStyleVar_COUNT",
+        "value": "16"
       }
     ]
   },
   "enumtypes": [],
   "locations": {
-    "EmulateThreeButtonMouse": "imnodes:112",
-    "ImNodesAttributeFlags_": "imnodes:95",
-    "ImNodesCol_": "imnodes:21",
-    "ImNodesIO": "imnodes:110",
-    "ImNodesMiniMapLocation_": "imnodes:211",
-    "ImNodesPinShape_": "imnodes:84",
-    "ImNodesStyle": "imnodes:165",
-    "ImNodesStyleFlags_": "imnodes:75",
-    "ImNodesStyleVar_": "imnodes:55",
-    "LinkDetachWithModifierClick": "imnodes:124",
-    "MultipleSelectModifier": "imnodes:140"
+    "EmulateThreeButtonMouse": "imnodes:129",
+    "ImNodesAttributeFlags_": "imnodes:112",
+    "ImNodesCol_": "imnodes:24",
+    "ImNodesIO": "imnodes:127",
+    "ImNodesLinkStyle_": "imnodes:105",
+    "ImNodesMiniMapLocation_": "imnodes:230",
+    "ImNodesNodeSideShape_": "imnodes:98",
+    "ImNodesPinShape_": "imnodes:88",
+    "ImNodesStyle": "imnodes:182",
+    "ImNodesStyleFlags_": "imnodes:79",
+    "ImNodesStyleVar_": "imnodes:58",
+    "LinkDetachWithModifierClick": "imnodes:141",
+    "MultipleSelectModifier": "imnodes:157"
   },
   "nonPOD": {
     "EmulateThreeButtonMouse": true,
@@ -393,11 +429,19 @@
         "type": "float"
       },
       {
+        "name": "NodeShapedSideDepth",
+        "type": "float"
+      },
+      {
         "name": "NodePadding",
         "type": "ImVec2"
       },
       {
         "name": "NodeBorderThickness",
+        "type": "float"
+      },
+      {
+        "name": "LinkTerminationMargin",
         "type": "float"
       },
       {

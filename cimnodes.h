@@ -17,6 +17,8 @@ typedef int ImNodesStyleFlags;
 typedef int ImNodesPinShape;
 typedef int ImNodesAttributeFlags;
 typedef int ImNodesMiniMapLocation;
+typedef int ImNodesNodeSideShape;
+typedef int ImNodesLinkStyle;
 typedef enum {
     ImNodesCol_NodeBackground = 0,
     ImNodesCol_NodeBackgroundHovered,
@@ -54,6 +56,7 @@ typedef enum {
     ImNodesStyleVar_NodeCornerRounding,
     ImNodesStyleVar_NodePadding,
     ImNodesStyleVar_NodeBorderThickness,
+    ImNodesStyleVar_LinkTerminationMargin,
     ImNodesStyleVar_LinkThickness,
     ImNodesStyleVar_LinkLineSegmentsPerLength,
     ImNodesStyleVar_LinkHoverDistance,
@@ -82,6 +85,15 @@ typedef enum {
     ImNodesPinShape_Quad,
     ImNodesPinShape_QuadFilled
 }ImNodesPinShape_;
+typedef enum {
+    ImNodesNodeSideShape_Straight,
+    ImNodesNodeSideShape_Round,
+    ImNodesNodeSideShape_Sharp
+}ImNodesNodeSideShape_;
+typedef enum {
+    ImNodesLinkStyle_Orthogonal = 0,
+    ImNodesLinkStyle_Beziers
+}ImNodesLinkStyle_;
 typedef enum {
     ImNodesAttributeFlags_None = 0,
     ImNodesAttributeFlags_EnableLinkDetachWithDragClick = 1 << 0,
@@ -122,8 +134,10 @@ struct ImNodesStyle
 {
     float GridSpacing;
     float NodeCornerRounding;
+    float NodeShapedSideDepth;
     ImVec2 NodePadding;
     float NodeBorderThickness;
+    float LinkTerminationMargin;
     float LinkThickness;
     float LinkLineSegmentsPerLength;
     float LinkHoverDistance;
@@ -205,8 +219,12 @@ CIMGUI_API void imnodes_BeginStaticAttribute(int id);
 CIMGUI_API void imnodes_EndStaticAttribute(void);
 CIMGUI_API void imnodes_PushAttributeFlag(ImNodesAttributeFlags flag);
 CIMGUI_API void imnodes_PopAttributeFlag(void);
-CIMGUI_API void imnodes_Link(int id,int start_attribute_id,int end_attribute_id);
+CIMGUI_API void imnodes_Link(const int id,const int start_attribute_id,const int end_attribute_id);
+CIMGUI_API void imnodes_LinkWithWaypoints(const int id,const int start_attribute_id,const int end_attribute_id,const size_t length,const float* orthogonal_waypoints);
 CIMGUI_API void imnodes_SetNodeDraggable(int node_id,const bool draggable);
+CIMGUI_API void imnodes_SetNodeLeftSideShape(const int node_id,const ImNodesNodeSideShape shape);
+CIMGUI_API void imnodes_SetNodeRightSideShape(const int node_id,const ImNodesNodeSideShape shape);
+CIMGUI_API void imnodes_SetNodeShapedSideDepth(const int node_id,const float depth);
 CIMGUI_API void imnodes_SetNodeScreenSpacePos(int node_id,const ImVec2 screen_space_pos);
 CIMGUI_API void imnodes_SetNodeEditorSpacePos(int node_id,const ImVec2 editor_space_pos);
 CIMGUI_API void imnodes_SetNodeGridSpacePos(int node_id,const ImVec2 grid_pos);
@@ -214,6 +232,9 @@ CIMGUI_API void imnodes_GetNodeScreenSpacePos(ImVec2 *pOut,const int node_id);
 CIMGUI_API void imnodes_GetNodeEditorSpacePos(ImVec2 *pOut,const int node_id);
 CIMGUI_API void imnodes_GetNodeGridSpacePos(ImVec2 *pOut,const int node_id);
 CIMGUI_API void imnodes_SnapNodeToGrid(int node_id);
+CIMGUI_API void imnodes_SetPinCategory(const int pin_id,const int category);
+CIMGUI_API void imnodes_SetPinLinkStyle(const int pin_id,const ImNodesLinkStyle style);
+CIMGUI_API void imnodes_SetLinkPathOrthogonalWaypoints(const int link_id,const size_t length,const float* waypoints);
 CIMGUI_API bool imnodes_IsEditorHovered(void);
 CIMGUI_API bool imnodes_IsNodeHovered(int* node_id);
 CIMGUI_API bool imnodes_IsLinkHovered(int* link_id);
