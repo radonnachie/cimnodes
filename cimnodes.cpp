@@ -203,6 +203,18 @@ CIMGUI_API void imnodes_SetNodeDraggable(int node_id,const bool draggable)
 {
     return imnodes::SetNodeDraggable(node_id,draggable);
 }
+CIMGUI_API void imnodes_SetNodeLeftSideShape(const int node_id,const ImNodesNodeSideShape shape)
+{
+    return imnodes::SetNodeLeftSideShape(node_id,shape);
+}
+CIMGUI_API void imnodes_SetNodeRightSideShape(const int node_id,const ImNodesNodeSideShape shape)
+{
+    return imnodes::SetNodeRightSideShape(node_id,shape);
+}
+CIMGUI_API void imnodes_SetNodeShapedSideDepth(const int node_id,const float depth)
+{
+    return imnodes::SetNodeShapedSideDepth(node_id,depth);
+}
 CIMGUI_API void imnodes_SetNodeScreenSpacePos(int node_id,const ImVec2 screen_space_pos)
 {
     return imnodes::SetNodeScreenSpacePos(node_id,screen_space_pos);

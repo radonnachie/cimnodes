@@ -17,6 +17,7 @@ typedef int ImNodesStyleFlags;
 typedef int ImNodesPinShape;
 typedef int ImNodesAttributeFlags;
 typedef int ImNodesMiniMapLocation;
+typedef int ImNodesNodeSideShape;
 typedef enum {
     ImNodesCol_NodeBackground = 0,
     ImNodesCol_NodeBackgroundHovered,
@@ -83,6 +84,11 @@ typedef enum {
     ImNodesPinShape_QuadFilled
 }ImNodesPinShape_;
 typedef enum {
+    ImNodesNodeSideShape_Straight,
+    ImNodesNodeSideShape_Round,
+    ImNodesNodeSideShape_Sharp
+}ImNodesNodeSideShape_;
+typedef enum {
     ImNodesAttributeFlags_None = 0,
     ImNodesAttributeFlags_EnableLinkDetachWithDragClick = 1 << 0,
     ImNodesAttributeFlags_EnableLinkCreationOnSnap = 1 << 1
@@ -122,6 +128,7 @@ struct ImNodesStyle
 {
     float GridSpacing;
     float NodeCornerRounding;
+    float NodeShapedSideDepth;
     ImVec2 NodePadding;
     float NodeBorderThickness;
     float LinkThickness;
@@ -207,6 +214,9 @@ CIMGUI_API void imnodes_PushAttributeFlag(ImNodesAttributeFlags flag);
 CIMGUI_API void imnodes_PopAttributeFlag(void);
 CIMGUI_API void imnodes_Link(int id,int start_attribute_id,int end_attribute_id);
 CIMGUI_API void imnodes_SetNodeDraggable(int node_id,const bool draggable);
+CIMGUI_API void imnodes_SetNodeLeftSideShape(const int node_id,const ImNodesNodeSideShape shape);
+CIMGUI_API void imnodes_SetNodeRightSideShape(const int node_id,const ImNodesNodeSideShape shape);
+CIMGUI_API void imnodes_SetNodeShapedSideDepth(const int node_id,const float depth);
 CIMGUI_API void imnodes_SetNodeScreenSpacePos(int node_id,const ImVec2 screen_space_pos);
 CIMGUI_API void imnodes_SetNodeEditorSpacePos(int node_id,const ImVec2 editor_space_pos);
 CIMGUI_API void imnodes_SetNodeGridSpacePos(int node_id,const ImVec2 grid_pos);
