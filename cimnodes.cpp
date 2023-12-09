@@ -163,17 +163,17 @@ CIMGUI_API void imnodes_EndNodeTitleBar()
 {
     return imnodes::EndNodeTitleBar();
 }
-CIMGUI_API void imnodes_BeginInputAttribute(int id,ImNodesPinShape shape,int category)
+CIMGUI_API void imnodes_BeginInputAttribute(int id,ImNodesPinShape shape)
 {
-    return imnodes::BeginInputAttribute(id,shape,category);
+    return imnodes::BeginInputAttribute(id,shape);
 }
 CIMGUI_API void imnodes_EndInputAttribute()
 {
     return imnodes::EndInputAttribute();
 }
-CIMGUI_API void imnodes_BeginOutputAttribute(int id,ImNodesPinShape shape,int category)
+CIMGUI_API void imnodes_BeginOutputAttribute(int id,ImNodesPinShape shape)
 {
-    return imnodes::BeginOutputAttribute(id,shape,category);
+    return imnodes::BeginOutputAttribute(id,shape);
 }
 CIMGUI_API void imnodes_EndOutputAttribute()
 {
@@ -242,6 +242,14 @@ CIMGUI_API void imnodes_GetNodeGridSpacePos(ImVec2 *pOut,const int node_id)
 CIMGUI_API void imnodes_SnapNodeToGrid(int node_id)
 {
     return imnodes::SnapNodeToGrid(node_id);
+}
+CIMGUI_API void imnodes_SetPinCategory(const int pin_id,const int category)
+{
+    return imnodes::SetPinCategory(pin_id,category);
+}
+CIMGUI_API void imnodes_SetPinLinkStyle(const int pin_id,const ImNodesLinkStyle style)
+{
+    return imnodes::SetPinLinkStyle(pin_id,style);
 }
 CIMGUI_API bool imnodes_IsEditorHovered()
 {

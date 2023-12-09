@@ -18,6 +18,7 @@ typedef int ImNodesPinShape;
 typedef int ImNodesAttributeFlags;
 typedef int ImNodesMiniMapLocation;
 typedef int ImNodesNodeSideShape;
+typedef int ImNodesLinkStyle;
 typedef enum {
     ImNodesCol_NodeBackground = 0,
     ImNodesCol_NodeBackgroundHovered,
@@ -55,6 +56,7 @@ typedef enum {
     ImNodesStyleVar_NodeCornerRounding,
     ImNodesStyleVar_NodePadding,
     ImNodesStyleVar_NodeBorderThickness,
+    ImNodesStyleVar_LinkTerminationMargin,
     ImNodesStyleVar_LinkThickness,
     ImNodesStyleVar_LinkLineSegmentsPerLength,
     ImNodesStyleVar_LinkHoverDistance,
@@ -88,6 +90,10 @@ typedef enum {
     ImNodesNodeSideShape_Round,
     ImNodesNodeSideShape_Sharp
 }ImNodesNodeSideShape_;
+typedef enum {
+    ImNodesLinkStyle_Orthogonal = 0,
+    ImNodesLinkStyle_Beziers
+}ImNodesLinkStyle_;
 typedef enum {
     ImNodesAttributeFlags_None = 0,
     ImNodesAttributeFlags_EnableLinkDetachWithDragClick = 1 << 0,
@@ -131,6 +137,7 @@ struct ImNodesStyle
     float NodeShapedSideDepth;
     ImVec2 NodePadding;
     float NodeBorderThickness;
+    float LinkTerminationMargin;
     float LinkThickness;
     float LinkLineSegmentsPerLength;
     float LinkHoverDistance;
@@ -204,9 +211,9 @@ CIMGUI_API void imnodes_EndNode(void);
 CIMGUI_API void imnodes_GetNodeDimensions(ImVec2 *pOut,int id);
 CIMGUI_API void imnodes_BeginNodeTitleBar(void);
 CIMGUI_API void imnodes_EndNodeTitleBar(void);
-CIMGUI_API void imnodes_BeginInputAttribute(int id,ImNodesPinShape shape,int category);
+CIMGUI_API void imnodes_BeginInputAttribute(int id,ImNodesPinShape shape);
 CIMGUI_API void imnodes_EndInputAttribute(void);
-CIMGUI_API void imnodes_BeginOutputAttribute(int id,ImNodesPinShape shape,int category);
+CIMGUI_API void imnodes_BeginOutputAttribute(int id,ImNodesPinShape shape);
 CIMGUI_API void imnodes_EndOutputAttribute(void);
 CIMGUI_API void imnodes_BeginStaticAttribute(int id);
 CIMGUI_API void imnodes_EndStaticAttribute(void);
@@ -224,6 +231,8 @@ CIMGUI_API void imnodes_GetNodeScreenSpacePos(ImVec2 *pOut,const int node_id);
 CIMGUI_API void imnodes_GetNodeEditorSpacePos(ImVec2 *pOut,const int node_id);
 CIMGUI_API void imnodes_GetNodeGridSpacePos(ImVec2 *pOut,const int node_id);
 CIMGUI_API void imnodes_SnapNodeToGrid(int node_id);
+CIMGUI_API void imnodes_SetPinCategory(const int pin_id,const int category);
+CIMGUI_API void imnodes_SetPinLinkStyle(const int pin_id,const ImNodesLinkStyle style);
 CIMGUI_API bool imnodes_IsEditorHovered(void);
 CIMGUI_API bool imnodes_IsNodeHovered(int* node_id);
 CIMGUI_API bool imnodes_IsLinkHovered(int* link_id);
