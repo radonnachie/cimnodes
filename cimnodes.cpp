@@ -199,6 +199,10 @@ CIMGUI_API void imnodes_Link(int id,int start_attribute_id,int end_attribute_id)
 {
     return imnodes::Link(id,start_attribute_id,end_attribute_id);
 }
+CIMGUI_API void imnodes_LinkWithWaypoints(int id,int start_attribute_id,int end_attribute_id,const size_t length,const float* orthogonal_waypoints)
+{
+    return imnodes::LinkWithWaypoints(id,start_attribute_id,end_attribute_id,length,orthogonal_waypoints);
+}
 CIMGUI_API void imnodes_SetNodeDraggable(int node_id,const bool draggable)
 {
     return imnodes::SetNodeDraggable(node_id,draggable);
@@ -250,6 +254,10 @@ CIMGUI_API void imnodes_SetPinCategory(const int pin_id,const int category)
 CIMGUI_API void imnodes_SetPinLinkStyle(const int pin_id,const ImNodesLinkStyle style)
 {
     return imnodes::SetPinLinkStyle(pin_id,style);
+}
+CIMGUI_API void imnodes_SetLinkPathOrthogonalWaypoints(const int link_id,const size_t length,const float* waypoints)
+{
+    return imnodes::SetLinkPathOrthogonalWaypoints(link_id,length,waypoints);
 }
 CIMGUI_API bool imnodes_IsEditorHovered()
 {
