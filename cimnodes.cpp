@@ -251,9 +251,13 @@ CIMGUI_API void imnodes_SetPinCategory(const int pin_id,const int category)
 {
     return imnodes::SetPinCategory(pin_id,category);
 }
-CIMGUI_API void imnodes_SetPinLinkStyle(const int pin_id,const ImNodesLinkStyle style)
+CIMGUI_API int imnodes_GetPinCategory(const int pin_id)
 {
-    return imnodes::SetPinLinkStyle(pin_id,style);
+    return imnodes::GetPinCategory(pin_id);
+}
+CIMGUI_API void imnodes_SetLinkStyle(const int link_id,const ImNodesLinkStyle style)
+{
+    return imnodes::SetLinkStyle(link_id,style);
 }
 CIMGUI_API void imnodes_SetLinkPathOrthogonalWaypoints(const int link_id,const size_t length,const float* waypoints)
 {
